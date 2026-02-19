@@ -1,0 +1,342 @@
+---
+const currentYear = new Date().getFullYear();
+
+const footerLinks = [
+  {
+    title: "Company",
+    links: [
+      { name: "Pricing", href: "/#pricing" },
+      { name: "About us", href: "/#about" },
+      { name: "Contact us", href: "/#contact" },
+    ],
+  },
+  {
+    title: "Product",
+    links: [
+      { name: "Features", href: "/#features" },
+      { name: "Pricing", href: "/#pricing" },
+      { name: "CodeForge", href: "/shield-ai" },
+    ],
+  },
+];
+
+const socials = [
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/codeshieldai/",
+    icon: `<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>`,
+  },
+  {
+    name: "Youtube",
+    href: "https://www.youtube.com/@CodeShieldAI",
+    icon: `<path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/>`,
+  },
+  {
+    name: "Pinterest",
+    href: "https://www.pinterest.com/codeshieldai/",
+    icon: `<circle cx="12" cy="12" r="10"/><path d="M10 7h2.5a2.5 2.5 0 0 1 0 5H10V7z"/><path d="M10 12v5"/>`,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/company/codeshield-ai/",
+    icon: `<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>`,
+  },
+  {
+    name: "Twitter",
+    href: "https://x.com/codeshield_ai",
+    icon: `<path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>`,
+  },
+];
+---
+
+<footer
+  class="w-full relative bg-[#F8F9FA] dark:bg-[#0A0A0A] overflow-hidden pt-8 md:pt-14"
+>
+  <div class="max-w-[1440px] mx-auto px-4 sm:px-6 relative z-10">
+    <!-- Floating Card -->
+    <div
+      class="bg-white dark:bg-[#111] rounded-[2.5rem] md:rounded-[3rem] p-8 md:p-10 lg:p-12 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] border border-border/10 mb-4 md:mb-6"
+    >
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10 lg:gap-12"
+      >
+        <!-- Brand Info -->
+        <div class="space-y-6">
+          <div class="flex items-center gap-3">
+            <img
+              src="/logo.svg"
+              alt="Shield AI"
+              class="w-20 h-20 object-contain"
+            />
+          </div>
+
+          <p class="text-muted-foreground text-sm leading-relaxed font-medium">
+            Securing code assets and cloud infrastructure with deep-probe AI
+            vulnerability analysis.
+          </p>
+
+          <!-- Dynamic Social Icons -->
+          <div class="flex items-center gap-3.5">
+            {
+              socials.map((social) => (
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="w-10 h-10 rounded-xl bg-muted/10 dark:bg-white/5 flex items-center justify-center text-white/80 hover:text-white hover:bg-primary transition-all duration-300 hover:-translate-y-1 group/social shadow-sm"
+                  aria-label={social.name}
+                >
+                  {social.name === "Pinterest" ? (
+                    <div class="group-hover/social:scale-110 transition-transform duration-300 flex items-center justify-center">
+                      <img
+                        src="/pinterest.svg"
+                        alt="Pinterest"
+                        width="18"
+                        height="18"
+                        class="brightness-0 invert opacity-80 group-hover/social:opacity-100"
+                      />
+                    </div>
+                  ) : (
+                    <div class="group-hover/social:scale-110 transition-transform duration-300 flex items-center justify-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        set:html={social.icon}
+                      />
+                    </div>
+                  )}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+
+        <!-- Dynamic Link Groups -->
+        {
+          footerLinks.map((group) => (
+            <div class="space-y-6">
+              <h3 class="text-foreground font-bold text-xs tracking-widest uppercase opacity-40">
+                {group.title}
+              </h3>
+              <ul class="space-y-4">
+                {group.links.map((link) => (
+                  <li>
+                    <a
+                      href={link.href}
+                      class="group/link text-muted-foreground hover:text-primary transition-all text-base font-medium relative py-1"
+                    >
+                      {link.name}
+                      <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover/link:w-full" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+
+        <!-- Newsletter Section -->
+        <div class="space-y-6">
+          <h3
+            class="text-foreground font-bold text-xs tracking-widest uppercase opacity-40"
+          >
+            Newsletter
+          </h3>
+          <div class="space-y-4">
+            <p
+              class="text-muted-foreground text-base leading-relaxed font-medium"
+            >
+              Join our newsletter for weekly updates.
+            </p>
+            <form
+              id="newsletter-form"
+              action="https://formspree.io/f/mreaqnvp"
+              method="POST"
+              class="relative w-full max-w-sm flex items-center"
+            >
+              <input
+                id="newsletter-email"
+                type="email"
+                name="email"
+                required
+                placeholder="Enter your email"
+                class="w-full h-12 pl-6 pr-24 rounded-full bg-muted/10 border border-border/60 focus:border-primary/50 focus:ring-2 focus:ring-primary/10 outline-none transition-all text-base placeholder:text-muted-foreground/50"
+              />
+              <button
+                id="newsletter-btn"
+                type="submit"
+                class="absolute right-1 top-1 bottom-1 px-6 bg-primary text-white font-bold rounded-full hover:brightness-110 active:scale-95 transition-all text-[10px] uppercase tracking-wider shadow-md whitespace-nowrap"
+              >
+                <span id="newsletter-btn-text">Join</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div
+        class="mt-10 pt-6 border-t border-border/40 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] font-semibold tracking-wider text-muted-foreground/50 uppercase"
+      >
+        <p class="order-2 md:order-1">© {currentYear} CodeShield AI.</p>
+        <div
+          class="flex flex-wrap justify-center gap-6 md:gap-8 order-1 md:order-2"
+        >
+          <a href="/privacy" class="hover:text-primary transition-colors"
+            >Privacy</a
+          >
+          <a href="/terms" class="hover:text-primary transition-colors">Terms</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Giant Spotlight Branding -->
+  <div
+    class="relative w-full h-[25vh] md:h-[30vh] lg:h-[35vh] flex items-center justify-center overflow-hidden spotlight-container"
+  >
+    <div
+      class="relative w-full h-full flex items-center justify-center select-none"
+    >
+      <!-- Background Text (Base) -->
+      <div
+        class="text-[16vw] font-black uppercase tracking-tighter text-foreground/5 dark:text-white/5 absolute transition-opacity pointer-events-none"
+      >
+        CodeShield
+      </div>
+
+      <!-- Reveal Text (Spotlight) -->
+      <div
+        id="spotlight-text"
+        class="text-[16vw] font-black uppercase tracking-tighter text-primary absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity duration-300 opacity-0 z-20"
+        style="clip-path: circle(150px at var(--x, 50%) var(--y, 50%))"
+      >
+        CodeShield
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const spotlightContainer = document.querySelector(".spotlight-container");
+  const spotlightText = document.getElementById("spotlight-text");
+
+  if (spotlightContainer && spotlightText) {
+    spotlightContainer.addEventListener("mousemove", (e) => {
+      const rect = spotlightContainer.getBoundingClientRect();
+      const x = (((e as MouseEvent).clientX - rect.left) / rect.width) * 100;
+      const y = (((e as MouseEvent).clientY - rect.top) / rect.height) * 100;
+
+      spotlightText.style.setProperty("--x", `${x}%`);
+      spotlightText.style.setProperty("--y", `${y}%`);
+      spotlightText.style.opacity = "1";
+    });
+
+    spotlightContainer.addEventListener("mouseleave", () => {
+      spotlightText.style.opacity = "0";
+    });
+  }
+
+  // Newsletter Form Logic
+  function initNewsletter() {
+    const form = document.getElementById("newsletter-form") as HTMLFormElement;
+    const emailInput = document.getElementById("newsletter-email");
+    const btn = document.getElementById("newsletter-btn");
+    const btnText = document.getElementById("newsletter-btn-text");
+
+    if (!form || !emailInput || !btn || !btnText) return;
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      // Loading state
+      btnText.textContent = "Joining...";
+      btn.classList.add("opacity-75", "pointer-events-none");
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        if (response.ok) {
+          // Success state
+          emailInput.classList.add("hidden");
+          btn.classList.remove(
+            "absolute",
+            "right-1",
+            "top-1",
+            "bottom-1",
+            "opacity-75",
+          );
+          btn.classList.add(
+            "w-full",
+            "h-12",
+            "bg-primary",
+            "cursor-default",
+            "text-[10px]",
+          );
+          btnText.textContent = "Thank you for subscribing!";
+
+          // Optional: Store in localStorage to keep it hidden on refresh
+          localStorage.setItem("newsletter-subscribed", "true");
+        } else {
+          btnText.textContent = "Error";
+          setTimeout(() => {
+            btnText.textContent = "Join";
+            btn.classList.remove("opacity-75", "pointer-events-none");
+          }, 2000);
+        }
+      } catch (error) {
+        btnText.textContent = "Error";
+        setTimeout(() => {
+          btnText.textContent = "Join";
+          btn.classList.remove("opacity-75", "pointer-events-none");
+        }, 2000);
+      }
+    });
+
+    // Check if already subscribed
+    if (localStorage.getItem("newsletter-subscribed") === "true") {
+      emailInput.classList.add("hidden");
+      btn.classList.remove("absolute", "right-1", "top-1", "bottom-1");
+      btn.classList.add(
+        "w-full",
+        "h-12",
+        "bg-primary",
+        "cursor-default",
+        "pointer-events-none",
+        "text-[10px]",
+      );
+      btnText.textContent = "Thank you for subscribing!";
+    }
+  }
+
+  initNewsletter();
+  document.addEventListener("astro:after-swap", initNewsletter);
+</script>
+
+<style>
+  footer {
+    position: relative;
+    z-index: 50;
+  }
+  #spotlight-text,
+  .text-\[18vw\] {
+    font-family: "Exo", sans-serif;
+    line-height: 0.8;
+  }
+</style>

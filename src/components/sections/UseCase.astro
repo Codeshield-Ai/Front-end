@@ -1,0 +1,111 @@
+---
+import Highlight from "../Highlight.astro";
+
+const cases = [
+  {
+    phase: "01",
+    cat: "Startups",
+    title: "Instant Clusters",
+    desc: "Single-click deployment.",
+    img: "/Enterprise Solutions images.png"
+  },
+  {
+    phase: "02",
+    cat: "FinTech",
+    title: "Compliance Logs",
+    desc: "Immutable audit trails.",
+    img: "/Enterprise Solutions images (2).png"
+  },
+  {
+    phase: "03",
+    cat: "DevSecOps",
+    title: "CI/CD Shield",
+    desc: "Automated risk scoring.",
+    img: "/Enterprise Solutions images (3).png"
+  },
+  {
+    phase: "04",
+    cat: "Enterprise",
+    title: "Cloud Integrity",
+    desc: "Real-time exploit prevention.",
+    img: "/Enterprise Solutions images (4).png"
+  },
+  {
+    phase: "05",
+    cat: "Healthcare",
+    title: "PHI Protection",
+    desc: "HIPAA-grade encryption.",
+    img: "/Enterprise Solutions images (5).png"
+  },
+   {
+    phase: "06",
+    cat: "E-Commerce",
+    title: "Fraud Guard",
+    desc: "Transaction monitoring.",
+    img: "/Enterprise Solutions images (6).png"
+  }
+];
+---
+
+<section id="usecase" class="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-[#0F0F11] relative overflow-hidden">
+  
+  <div class="max-w-7xl mx-auto relative z-10">
+    
+    <!-- Section Header (Centered) -->
+    <div class="mb-16 md:mb-20 flex flex-col items-center justify-center text-center space-y-4 max-w-3xl mx-auto">
+      <span class="text-primary font-bold text-sm tracking-widest uppercase block mb-1">Enterprise Solutions</span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-[1.05]">
+        Shield in Every <Highlight class="text-primary" type="box">Scenario</Highlight>
+      </h2>
+      <p class="text-muted-foreground text-sm lg:text-base leading-relaxed font-medium max-w-lg mx-auto pt-2">
+        Our security engine adapts to enterprise-grade requirements across complex tech stacks.
+      </p>
+    </div>
+
+    <!-- Performance Optimized Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      {cases.map((c) => (
+        <div class="group flex flex-col bg-[#0a0a0b] border border-white/5 rounded-3xl overflow-hidden hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-1 transform-gpu">
+          
+          <!-- Image Area (Top Half) -->
+          <div class="h-48 lg:h-56 relative overflow-hidden shrink-0">
+            <div class="absolute inset-0 bg-primary/5 z-10 pointer-events-none"></div>
+            <img 
+              src={c.img} 
+              alt={c.title}
+              class="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
+          <!-- Content Area (Bottom Half) -->
+          <div class="p-8 flex flex-col items-start text-left space-y-5 relative z-20 bg-[#0a0a0b] flex-grow w-full">
+            
+            <!-- Badge (Left Aligned & Overlapping) -->
+            <div class="-mt-14 mb-1">
+               <div class="bg-[#0a0a0b] p-2 rounded-full ring-8 ring-[#0a0a0b] inline-block">
+                 <div class="bg-primary text-white px-4 py-1.5 rounded-full border border-primary/20">
+                    <span class="text-[11px] font-black uppercase tracking-widest">Phase {c.phase}</span>
+                 </div>
+               </div>
+            </div>
+
+            <div class="space-y-2 w-full">
+              <span class="text-xs font-bold text-primary/80 uppercase tracking-widest">{c.cat}</span>
+              <h3 class="text-xl font-medium text-white uppercase tracking-tight leading-tight">
+                {c.title}
+              </h3>
+            </div>
+
+            <p class="text-sm md:text-base text-muted-foreground/80 font-medium leading-relaxed">
+              {c.desc}
+            </p>
+            
+          </div>
+
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

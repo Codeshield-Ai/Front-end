@@ -1,0 +1,111 @@
+---
+import Highlight from "../Highlight.astro";
+
+const faqs = [
+  {
+    q: "How secure is the AI analysis?",
+    a: "Our engine uses isolated neural sandboxes to analyze your infrastructure logic without your source code ever leaving your VPC. We leverage transient environments that dissolve immediately after scanning.",
+  },
+  {
+    q: "Does it support hybrid cloud?",
+    a: "Yes. We offer specialized monitoring agents for AWS, Azure, GCP, and traditional on-premise infrastructure layers. The integration is seamless via our universal CLI or cloud-native connectors.",
+  },
+  {
+    q: "Can I automate security patching?",
+    a: "Absolutely. Our bot can automatically generate and verify merge requests to patch critical vulnerabilities in real-time. You can set rules to auto-approve low-risk patches while flagging others for review.",
+  },
+  {
+    q: "Is it SOC2/ISO compliant?",
+    a: "CodeShield is architected to exceed enterprise standards, offering automated audit logs for SOC2 Type II and ISO 27001 compliance. We provide pre-packaged report exports for your compliance officers.",
+  },
+  {
+    q: "How does the AI handle false positives?",
+    a: "Our multi-layered verification system cross-references findings against known exploit patterns to ensure a near-zero false positive rate, saving your team from fatigue.",
+  },
+  {
+    q: "Can I export security scan reports?",
+    a: "Yes, you can generate comprehensive PDF or CSV reports for stakeholders, including executive summaries and technical remediation steps for developers.",
+  },
+];
+---
+
+<section
+  id="faq"
+  class="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-[#0F0F11] overflow-hidden relative border-none"
+>
+  <div class="max-w-7xl mx-auto relative z-10">
+    <!-- Header Area -->
+    <div
+      class="mb-16 md:mb-20 flex flex-col items-center justify-center text-center space-y-4 max-w-3xl mx-auto"
+    >
+      <span
+        class="text-primary font-bold text-sm tracking-widest uppercase block mb-1"
+        >Support Center</span
+      >
+      <h2
+        class="text-3xl md:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-[1.05]"
+      >
+        Frequently Asked <Highlight class="text-primary" type="box"
+          >Questions</Highlight
+        >
+      </h2>
+      <p
+        class="text-muted-foreground text-sm lg:text-base leading-relaxed font-medium max-w-lg mx-auto pt-2"
+      >
+        Find answers to common questions about our security protocols, AI
+        integration, and enterprise compliance standards.
+      </p>
+    </div>
+
+    <!-- Tactical FAQ Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+      {
+        faqs.map((f, index) => (
+          <div 
+            class="group relative p-6 rounded-2xl bg-[#0a0a0b]/40 border border-white/5 hover:bg-primary/[0.03] hover:border-primary/30 transition-all duration-500 flex flex-col gap-4 overflow-hidden"
+            style={`animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards ${index * 0.08}s; opacity: 0;`}
+          >
+            <!-- Tactical Corner Accent -->
+            <div class="absolute top-0 right-0 w-8 h-8 opacity-20 group-hover:opacity-100 transition-opacity">
+              <div class="absolute top-3 right-3 w-2 h-0.5 bg-primary/40 rounded-full"></div>
+              <div class="absolute top-3 right-3 w-0.5 h-2 bg-primary/40 rounded-full"></div>
+            </div>
+
+            <div class="space-y-3 relative z-10">
+              <div class="flex items-center gap-3">
+                <span class="text-[9px] font-black text-primary/40 group-hover:text-primary transition-colors tracking-[0.2em] font-mono">
+                  CASE_{index + 1 < 10 ? `0${index + 1}` : index + 1}
+                </span>
+                <div class="h-px flex-1 bg-white/[0.03]"></div>
+              </div>
+              
+              <h3 class="text-lg md:text-xl font-bold text-white tracking-tight leading-tight group-hover:text-primary transition-colors">
+                {f.q}
+              </h3>
+              
+              <p class="text-xs md:text-sm text-muted-foreground leading-relaxed font-medium line-clamp-4 group-hover:text-muted-foreground/80 transition-colors">
+                {f.a}
+              </p>
+            </div>
+
+            <!-- Bottom Glow -->
+            <div class="absolute -bottom-10 -left-10 w-20 h-20 bg-primary/5 blur-2xl group-hover:bg-primary/10 transition-colors"></div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

@@ -1,0 +1,277 @@
+---
+import "@/styles/starwind.css";
+import { Button } from "@/components/starwind/button";
+import DockNavbar from "@/components/DockNavbar.astro";
+import About from "@/components/sections/About.astro";
+import Features from "@/components/sections/Features.astro";
+import HowItWorks from "@/components/sections/HowItWorks.astro";
+import UseCase from "@/components/sections/UseCase.astro";
+import Pricing from "@/components/sections/Pricing.astro";
+import Testimonial from "@/components/sections/Testimonial.astro";
+import FAQ from "@/components/sections/FAQ.astro";
+import Contact from "@/components/sections/Contact.astro";
+import Footer from "@/components/sections/Footer.astro";
+import Highlight from "@/components/Highlight.astro";
+import Marquee from "@/components/sections/Marquee.astro";
+import CookieBanner from "@/components/CookieBanner.astro";
+---
+
+<html lang="en" class="dark">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<title>CodeShield AI | AI Infrastructure & Code Security</title>
+		<link rel="canonical" href="https://codeshieldai.com/" />
+		<!--Start of Tawk.to Script-->
+		<script type="text/javascript">
+			var Tawk_API = Tawk_API || {},
+				Tawk_LoadStart = new Date();
+			(function () {
+				var s1 = document.createElement("script"),
+					s0 = document.getElementsByTagName("script")[0];
+				s1.async = true;
+				s1.src =
+					"https://embed.tawk.to/6992b7b573d8cb1c357e2899/1jhihr869";
+				s1.charset = "UTF-8";
+				s1.setAttribute("crossorigin", "*");
+				s0.parentNode.insertBefore(s1, s0);
+			})();
+		</script>
+		<!--End of Tawk.to Script-->
+	</head>
+	<body
+		class="bg-background min-h-screen flex flex-col font-['Exo',sans-serif] selection:bg-secondary selection:text-foreground transition-colors duration-500 overflow-x-hidden"
+	>
+		<!-- Hero Section -->
+		<section
+			class="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-20 pb-10"
+		>
+			<!-- Background & Main Visual (Robot) -->
+			<div class="absolute inset-0 z-0">
+				<!-- Dark Gradient Background -->
+				<div class="absolute inset-0 bg-background"></div>
+
+				<!-- Main Visual (Video) -->
+				<video
+					autoplay
+					muted
+					loop
+					playsinline
+					class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[110%] w-auto max-w-none object-cover opacity-80 mix-blend-screen mask-image-gradient"
+				>
+					<source src="/mini.mp4" type="video/mp4" />
+				</video>
+
+				<!-- Cinematic Overlays for Text Readability -->
+				<div
+					class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background/80"
+				>
+				</div>
+				<div
+					class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40"
+				>
+				</div>
+			</div>
+
+			<!-- Main Content Grid -->
+			<div
+				class="relative z-10 w-full max-w-[1400px] px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 h-full items-center"
+			>
+				<!-- LEFT COL: Headline & branding -->
+				<div
+					class="lg:col-span-5 flex flex-col justify-center gap-8 lg:gap-16 pt-10 lg:pt-0"
+				>
+					<div>
+						<h1
+							class="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-medium tracking-tighter text-foreground leading-[0.95]"
+						>
+							Secure Your <br />
+							Code <Highlight
+								class="text-primary font-bold"
+								type="box">Asset</Highlight
+							>
+							<br />
+							with ShieldNet
+						</h1>
+
+						<div
+							class="mt-6 flex items-center gap-3 text-muted-foreground"
+						>
+							<div class="flex gap-0.5 text-primary">
+								<svg
+									fill="currentColor"
+									viewBox="0 0 24 24"
+									class="w-4 h-4"
+									><path
+										d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+									></path></svg
+								>
+								<svg
+									fill="currentColor"
+									viewBox="0 0 24 24"
+									class="w-4 h-4"
+									><path
+										d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+									></path></svg
+								>
+								<svg
+									fill="currentColor"
+									viewBox="0 0 24 24"
+									class="w-4 h-4"
+									><path
+										d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+									></path></svg
+								>
+								<svg
+									fill="currentColor"
+									viewBox="0 0 24 24"
+									class="w-4 h-4"
+									><path
+										d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+									></path></svg
+								>
+								<svg
+									fill="currentColor"
+									viewBox="0 0 24 24"
+									class="w-4 h-4"
+									><path
+										d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+									></path></svg
+								>
+							</div>
+							<span class="text-sm font-medium tracking-wide"
+								>5.0 from Reviews</span
+							>
+						</div>
+					</div>
+				</div>
+
+				<!-- CENTER SPACING (empty to let robot show) -->
+				<div class="hidden lg:block lg:col-span-3"></div>
+
+				<!-- RIGHT COL: Context & CTA -->
+				<div
+					class="lg:col-span-4 flex flex-col justify-center items-start lg:items-end gap-8 lg:gap-12 text-left lg:text-right"
+				>
+					<!-- Top right feature pills -->
+					<div class="hidden md:flex gap-4">
+						<div
+							class="w-16 h-16 rounded-2xl bg-card border border-border flex items-center justify-center"
+						>
+							<img
+								src="/hero icons.png"
+								alt="Feature 1"
+								class="w-10 h-10 object-contain"
+							/>
+						</div>
+						<div
+							class="w-16 h-16 rounded-2xl bg-card border border-border flex items-center justify-center"
+						>
+							<img
+								src="/hero icons (2).png"
+								alt="Feature 2"
+								class="w-10 h-10 object-contain"
+							/>
+						</div>
+						<div
+							class="w-16 h-16 rounded-2xl bg-card border border-border flex items-center justify-center"
+						>
+							<img
+								src="/hero icons (3).png"
+								alt="Feature 3"
+								class="w-10 h-10 object-contain"
+							/>
+						</div>
+					</div>
+
+					<div class="space-y-6 max-w-sm ml-0 lg:ml-auto">
+						<p
+							class="text-muted-foreground text-sm sm:text-base leading-relaxed"
+						>
+							Identify and neutralize cloud security risks with
+							deep-probe AI vulnerability analysis.
+						</p>
+
+						<!-- CTA Pill -->
+						<a
+							href="#contact"
+							class="inline-block px-8 py-3.5 rounded-full font-bold text-sm text-center transition-all duration-300 bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-wider ml-0 lg:ml-auto hover:shadow-lg hover:-translate-y-1"
+						>
+							Get Started
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- The Sections -->
+		<About />
+		<Features />
+		<HowItWorks />
+		<Marquee
+			text1="GLOBAL TRUST • ENTERPRISE READY • 99.9% VIGIL •"
+			text2="SUCCESS STORIES • REAL RESULTS • INDUSTRY SHIELD •"
+		/>
+		<UseCase />
+		<Pricing />
+
+		<Testimonial />
+		<FAQ />
+		<Contact />
+		<Footer />
+
+		<!-- The Dock Navbar Component -->
+		<DockNavbar />
+
+		<style is:global>
+			html {
+				scroll-behavior: smooth;
+				overflow-x: hidden;
+			}
+
+			body {
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				overflow-x: hidden;
+				width: 100%;
+			}
+
+			/* Scoped Hill shape mock - only for Hero */
+			section.relative.overflow-hidden::after {
+				content: "";
+				position: absolute;
+				bottom: -10%;
+				left: -10%;
+				right: -10%;
+				height: 50vh;
+				background: radial-gradient(
+					circle at 50% 100%,
+					#f0fdf4 0%,
+					transparent 70%
+				);
+				z-index: -5;
+				border-radius: 100%;
+				filter: blur(80px);
+				opacity: 0.6;
+				pointer-events: none;
+			}
+			.dark section.relative.overflow-hidden::after {
+				background: radial-gradient(
+					circle at 50% 100%,
+					rgba(117, 52, 254, 0.4) 0%,
+					transparent 70%
+				);
+			}
+		</style>
+		<CookieBanner />
+	</body>
+</html>

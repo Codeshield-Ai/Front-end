@@ -1,0 +1,222 @@
+---
+import Highlight from "../Highlight.astro";
+---
+
+<section
+  id="about"
+  class="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-[#0F0F11] flex flex-col items-center overflow-hidden relative"
+>
+  <div class="max-w-7xl mx-auto w-full">
+    <!-- Section Tag -->
+    <span
+      class="text-primary font-bold text-sm tracking-widest uppercase mb-2 md:mb-2 block"
+      >About Us</span
+    >
+
+    <!-- The Master Bento Grid -->
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 md:auto-rows-[220px]"
+    >
+      <!-- Area 1: Header + Text -->
+      <div
+        class="md:col-span-2 flex flex-col justify-center gap-4 md:gap-6 pb-8 md:pb-0 md:pr-4 lg:pr-8"
+      >
+        <h2
+          class="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-black uppercase leading-[1.05] tracking-tighter text-foreground"
+        >
+          Securing the <br />
+          cloud
+          <Highlight class="text-primary" type="box">with vision</Highlight>
+        </h2>
+        <p
+          class="text-sm md:text-base text-muted-foreground leading-relaxed font-medium max-w-md"
+        >
+          ShieldNet delivers deep-probe vulnerability analysis, leveraging
+          advanced computation to protect your code and infrastructure from
+          evolving threats.
+        </p>
+      </div>
+
+      <!-- Box 2: Stat "5M+" -->
+      <div
+        class="bg-card border border-border rounded-[2rem] p-6 md:p-8 flex flex-col justify-end gap-2 group hover:border-primary/50 transition-all duration-500 min-h-[180px] md:min-h-0"
+      >
+        <div
+          class="text-4xl md:text-5xl font-black tracking-tighter text-foreground"
+        >
+          <span class="stat-number" data-target="5">0</span>M<span
+            class="text-primary font-serif">+</span
+          >
+        </div>
+        <p
+          class="text-[10px] md:text-xs font-bold text-muted-foreground uppercase tracking-widest leading-tight"
+        >
+          Lines of code <br /> audited daily.
+        </p>
+      </div>
+
+      <!-- Box 3: Tall Vertical Image 1 -->
+      <div
+        class="hidden md:block md:col-span-1 md:row-span-2 relative overflow-hidden rounded-[2rem] border border-border group h-[400px] md:h-auto"
+      >
+        <img
+          src="/about4.png"
+          alt="Cyber Security"
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+        >
+        </div>
+      </div>
+
+      <!-- Box 4: Stat "12k+" -->
+      <div
+        class="bg-card border border-border rounded-[2rem] p-6 md:p-8 flex flex-col justify-end gap-2 group hover:border-primary/50 transition-all duration-500 min-h-[180px] md:min-h-0"
+      >
+        <div
+          class="text-4xl md:text-5xl font-black tracking-tighter text-foreground"
+        >
+          <span class="stat-number" data-target="12">0</span>k<span
+            class="text-primary font-serif">+</span
+          >
+        </div>
+        <p
+          class="text-[10px] md:text-xs font-bold text-muted-foreground uppercase tracking-widest leading-tight"
+        >
+          Vulnerabilities <br /> detected & patched.
+        </p>
+      </div>
+
+      <!-- Box 5: Middle Square Image -->
+      <div
+        class="relative overflow-hidden rounded-[2rem] border border-border group h-[200px] md:h-full"
+      >
+        <img
+          src="/about2.png"
+          alt="Security Operations"
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+        />
+      </div>
+
+      <!-- Box 6: Tall Vertical Image 2 -->
+      <div
+        class="hidden md:block md:col-span-1 md:row-span-2 relative overflow-hidden rounded-[2rem] border border-border group"
+      >
+        <img
+          src="/about3.png"
+          alt="Data Center"
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"
+        >
+        </div>
+      </div>
+
+      <!-- Box 7: House Image Detail -->
+      <div
+        class="relative overflow-hidden rounded-[2rem] border border-border group h-[200px] md:h-full"
+      >
+        <img
+          src="/about1.png"
+          alt="Code Analysis"
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+        />
+      </div>
+
+      <!-- Box 8: Stat "99.9%" -->
+      <div
+        class="bg-card border border-border rounded-[2rem] p-6 md:p-8 flex flex-col justify-end gap-2 group hover:border-primary/50 transition-all duration-500 min-h-[180px] md:min-h-0"
+      >
+        <div
+          class="text-4xl md:text-5xl font-black tracking-tighter text-foreground"
+        >
+          <span class="stat-number" data-target="99.9">0</span><span
+            class="text-primary font-serif">%</span
+          >
+        </div>
+        <p
+          class="text-[10px] md:text-xs font-bold text-muted-foreground uppercase tracking-widest leading-tight"
+        >
+          Infrastructure <br /> uptime guaranteed.
+        </p>
+      </div>
+
+      <!-- Box 9: Stat "24/7" -->
+      <div
+        class="bg-card border border-border rounded-[2rem] p-6 md:p-8 flex flex-col justify-end gap-2 group hover:border-primary/50 transition-all duration-500 min-h-[180px] md:min-h-0"
+      >
+        <div
+          class="text-4xl md:text-5xl font-black tracking-tighter text-foreground"
+        >
+          <span class="stat-number" data-target="24">0</span><span
+            class="text-primary font-serif">/7</span
+          >
+        </div>
+        <p
+          class="text-[10px] md:text-xs font-bold text-muted-foreground uppercase tracking-widest leading-tight"
+        >
+          Continuous real-time <br /> security monitoring.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function initCountUp() {
+    const counters = document.querySelectorAll(".stat-number");
+    const speed = 2000; // Duration in ms
+
+    const animate = (counter: HTMLElement) => {
+      const target = parseFloat(counter.getAttribute("data-target") || "0");
+      const start = 0;
+      const startTime = performance.now();
+
+      const update = (currentTime: number) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / speed, 1);
+
+        // Easing function: easeOutExpo
+        const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+
+        let current = start + (target - start) * ease;
+
+        if (target % 1 !== 0) {
+          counter.innerText = current.toFixed(1);
+        } else {
+          counter.innerText = Math.floor(current).toString();
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          counter.innerText = target.toString();
+        }
+      };
+
+      requestAnimationFrame(update);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animate(entry.target as HTMLElement);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 },
+    );
+
+    counters.forEach((counter) => observer.observe(counter));
+  }
+
+  // Initial load
+  initCountUp();
+
+  // Re-init after view transition
+  document.addEventListener("astro:after-swap", initCountUp);
+</script>

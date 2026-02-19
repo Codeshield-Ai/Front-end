@@ -1,0 +1,279 @@
+---
+const { pathname } = Astro.url;
+const normalizedPath = pathname.replace(/\/$/, "");
+
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/#about", label: "About" },
+  { href: "/#pricing", label: "Pricing" },
+  { href: "/#contact", label: "Contact" },
+];
+
+// Items for desktop view (keeping it as it was)
+const desktopNavItems = [
+  { href: "/", label: "Home" },
+  { href: "/#pricing", label: "Pricing" },
+  { href: "/#contact", label: "Contact" },
+];
+---
+
+<nav
+  class="fixed bottom-6 md:bottom-10 left-0 right-0 z-[100] font-['Exo',sans-serif] px-4"
+>
+  <div
+    class="dock-wrapper mx-auto max-w-[calc(100vw-2rem)] md:max-w-fit h-14 bg-background/95 backdrop-blur-2xl border border-zinc-200 dark:border-zinc-800 rounded-full shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)] dark:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] flex items-center px-1.5 md:px-2 overflow-hidden"
+  >
+    <!-- DESKTOP VIEW (md and up) -->
+    <div class="hidden md:flex items-center w-full">
+      <!-- Left: Brand -->
+      <div
+        class="flex items-center pl-4 pr-6 border-r border-zinc-100 dark:border-zinc-800"
+      >
+        <img src="/logo.svg" alt="Shield AI" class="w-12 h-16 object-contain" />
+      </div>
+
+      <!-- Center: Navigation -->
+      <div class="flex items-center justify-center gap-1 px-2">
+        {
+          desktopNavItems.map((item) => (
+            <a
+              href={item.href}
+              class="relative flex items-center justify-center h-10 px-6 rounded-full transition-all duration-300 text-[11px] font-bold uppercase tracking-widest text-muted-foreground hover:text-foreground hover:bg-muted"
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </div>
+
+      <!-- Right: CTA -->
+      <div
+        class="flex items-center justify-end pl-4 pr-1 border-l border-zinc-100 dark:border-zinc-800"
+      >
+        <a
+          href="https://app.codeshieldai.com/"
+          target="_blank"
+          class="h-10 px-6 rounded-full bg-foreground text-background text-[10px] font-black uppercase tracking-[0.2em] border border-zinc-200 dark:border-zinc-800 hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center whitespace-nowrap"
+        >
+          Login
+        </a>
+      </div>
+    </div>
+
+    <!-- MOBILE VIEW (sm only) -->
+    <div class="flex md:hidden items-center justify-between w-full px-2">
+      <!-- Logo -->
+      <div class="flex items-center gap-3 pl-2">
+        <div class="flex items-center justify-center">
+          <img
+            src="/logo.svg"
+            alt="Shield AI"
+            class="w-12 h-16 object-contain"
+          />
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button
+          id="mobile-menu-btn"
+          class="flex items-center gap-2 h-10 px-4 rounded-full bg-primary text-white text-[10px] font-bold uppercase tracking-widest hover:bg-primary/90 active:scale-95 transition-all"
+        >
+          <span>Menu</span>
+          <div class="flex flex-col gap-1">
+            <span class="w-4 h-0.5 bg-white rounded-full"></span>
+            <span class="w-4 h-0.5 bg-white rounded-full"></span>
+          </div>
+        </button>
+        <a
+          href="https://app.codeshieldai.com/"
+          target="_blank"
+          class="flex items-center justify-center h-10 px-4 rounded-full bg-foreground text-background text-[10px] font-black uppercase tracking-widest hover:scale-105 active:scale-95 transition-all"
+        >
+          Login
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Sidebar Overlay -->
+<div
+  id="sidebar-overlay"
+  class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[110] opacity-0 pointer-events-none transition-opacity duration-500 md:hidden"
+>
+</div>
+
+<!-- Sidebar Menu -->
+<div
+  id="mobile-sidebar"
+  class="fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-background/95 backdrop-blur-xl border-l border-zinc-800/50 z-[120] translate-x-full transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) md:hidden font-['Exo',sans-serif] flex flex-col p-8 overflow-y-auto"
+>
+  <div class="flex items-center justify-between mb-12">
+    <div class="flex items-center gap-3">
+      <div class="flex items-center justify-center">
+        <img src="/logo.svg" alt="Shield AI" class="w-12 h-12 object-contain" />
+      </div>
+    </div>
+    <button
+      id="close-sidebar"
+      class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-foreground hover:bg-white/10 active:scale-90 transition-all"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        ><line x1="18" x2="6" y1="6" y2="18"></line><line
+          x1="6"
+          x2="18"
+          y1="6"
+          y2="18"></line></svg
+      >
+    </button>
+  </div>
+
+  <div class="flex flex-col gap-4">
+    {
+      navItems.map((item, index) => (
+        <a
+          href={item.href}
+          class="group flex items-center justify-between px-6 py-5 rounded-2xl bg-white/5 border border-white/5 hover:bg-primary/10 hover:border-primary/20 transition-all duration-300"
+          style={`animation: slide-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards ${index * 0.1}s; opacity: 0; transform: translateX(20px);`}
+        >
+          <span class="text-xl font-bold uppercase tracking-tighter text-muted-foreground group-hover:text-foreground group-hover:translate-x-1 transition-all">
+            {item.label}
+          </span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="text-primary opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all"
+          >
+            <>
+              <line x1="5" x2="19" y1="12" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </>
+          </svg>
+        </a>
+      ))
+    }
+  </div>
+
+  <div class="mt-auto pt-10">
+    <a
+      href="https://app.codeshieldai.com/"
+      target="_blank"
+      class="w-full h-16 bg-primary text-white flex items-center justify-center rounded-full font-black uppercase tracking-[0.2em] text-sm hover:brightness-110 active:scale-[0.98] transition-all shadow-[0_20px_40px_-10px_rgba(126,103,241,0.4)] relative overflow-hidden group/btn"
+    >
+      <span class="relative z-10 flex items-center gap-2">
+        Get started
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="group-hover/btn:translate-x-1 transition-transform"
+          ><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg
+        >
+      </span>
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000"
+      >
+      </div>
+    </a>
+  </div>
+</div>
+
+<script>
+  function initSidebar() {
+    const menuBtn = document.getElementById("mobile-menu-btn");
+    const closeBtn = document.getElementById("close-sidebar");
+    const sidebar = document.getElementById("mobile-sidebar");
+    const overlay = document.getElementById("sidebar-overlay");
+
+    if (!menuBtn || !closeBtn || !sidebar || !overlay) return;
+
+    const toggleSidebar = (show: boolean) => {
+      if (show) {
+        sidebar.classList.remove("translate-x-full");
+        overlay.classList.remove("opacity-0", "pointer-events-none");
+        document.body.style.overflow = "hidden";
+      } else {
+        sidebar.classList.add("translate-x-full");
+        overlay.classList.add("opacity-0", "pointer-events-none");
+        document.body.style.overflow = "";
+      }
+    };
+
+    menuBtn.addEventListener("click", () => toggleSidebar(true));
+    closeBtn.addEventListener("click", () => toggleSidebar(false));
+    overlay.addEventListener("click", () => toggleSidebar(false));
+
+    // Close sidebar on link click
+    const links = sidebar.querySelectorAll("a");
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        // Small delay to let the click through before closing
+        setTimeout(() => toggleSidebar(false), 200);
+      });
+    });
+  }
+
+  // Run on initial load
+  initSidebar();
+
+  // Run on view transitions
+  document.addEventListener("astro:page-load", initSidebar);
+  document.addEventListener("astro:after-swap", initSidebar);
+</script>
+
+<style>
+  .dock-wrapper {
+    animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  #mobile-sidebar {
+    scrollbar-width: none;
+  }
+  #mobile-sidebar::-webkit-scrollbar {
+    display: none;
+  }
+</style>

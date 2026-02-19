@@ -1,0 +1,468 @@
+---
+import Highlight from "../Highlight.astro";
+const plans = [
+  {
+    id: "basic",
+    name: "SHIELD BASIC",
+    monthlyPrice: "0",
+    annualPrice: "0",
+    period: "Free Forever",
+    desc: "For individual developers who need essential AI code scans for private projects.",
+    color: "neutral",
+    features: [
+      {
+        title: "Weekly Scans",
+        desc: "Automated code vulnerability check once per week.",
+      },
+      {
+        title: "Essential Tools",
+        desc: "Access to the core risk detection dashboard.",
+      },
+      {
+        title: "Community Support",
+        desc: "Access to community forums for security guidance.",
+      },
+    ],
+    links: {
+      monthly: "#contact",
+      annual: "#contact",
+    },
+  },
+  {
+    id: "plus",
+    name: "SHIELD PLUS",
+    monthlyPrice: "45",
+    annualPrice: "432",
+    period: "Per Month",
+    desc: "For small security teams managing multiple cloud instances and repos.",
+    color: "primary",
+    features: [
+      {
+        title: "Daily AI Scans",
+        desc: "Continuous code analysis with daily reporting.",
+      },
+      {
+        title: "Infrastructure Oversight",
+        desc: "Real-time monitoring for up to 5 cloud clusters.",
+      },
+      {
+        title: "Advanced Integration",
+        desc: "Full CI/CD pipeline security integration.",
+      },
+      {
+        title: "Priority Support",
+        desc: "Direct email access to our security engineers.",
+      },
+    ],
+    links: {
+      monthly: "https://buy.stripe.com/test_14A3cw0iue3adpj30q0kE00",
+      annual: "https://buy.stripe.com/test_dRmbJ23uG5wE0CxeJ80kE02",
+    },
+  },
+  {
+    id: "pro",
+    name: "SHIELD PRO",
+    monthlyPrice: "99",
+    annualPrice: "950",
+    period: "Per Month",
+    desc: "For enterprises requiring full-scale infrastructure and code vigilance.",
+    color: "secondary",
+    features: [
+      {
+        title: "Real-Time Vigil",
+        desc: "Instant detection of exploits and vulnerabilities 24/7.",
+      },
+      {
+        title: "Unlimited Assets",
+        desc: "Protection for unlimited cloud clusters and repositories.",
+      },
+      {
+        title: "Custom Intelligence",
+        desc: "AI models trained on your specific infra logic.",
+      },
+      {
+        title: "24/7 SOC Access",
+        desc: "Direct phone line to our security operation center.",
+      },
+      {
+        title: "Compliance Hub",
+        desc: "Automated SOC2/ISO security reporting tools.",
+      },
+    ],
+    links: {
+      monthly: "https://buy.stripe.com/test_8x23cwd5g4sA84ZasS0kE01",
+      annual: "https://buy.stripe.com/test_9B6fZi1my2ksdpj30q0kE03",
+    },
+  },
+];
+---
+
+<section
+  id="pricing"
+  class="pt-16 md:pt-24 pb-16 md:pb-24 px-4 sm:px-6 md:px-12 bg-[#0F0F11] relative overflow-hidden border-none"
+>
+  <div class="max-w-7xl mx-auto relative z-10">
+    <!-- Header -->
+    <div
+      class="mb-16 md:mb-20 flex flex-col items-center justify-center text-center space-y-4 max-w-3xl mx-auto"
+    >
+      <span
+        class="text-primary font-bold text-sm tracking-widest uppercase block mb-1"
+        >Flexible Pricing</span
+      >
+      <h2
+        class="text-3xl md:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-[1.05]"
+      >
+        Pay <Highlight class="text-primary" type="box">Only</Highlight> for what you
+        use
+      </h2>
+      <p
+        class="text-muted-foreground text-sm lg:text-base leading-relaxed font-medium max-w-lg mx-auto pt-2"
+      >
+        Free to learn and experiment. Pay as you grow with our enterprise-grade
+        security tiers.
+      </p>
+    </div>
+
+    <!-- Toggle -->
+    <div class="flex flex-col items-center mb-16 gap-4">
+      <div
+        class="p-1.5 bg-card border border-border rounded-full inline-flex relative shadow-inner"
+      >
+        <div
+          class="absolute inset-y-1.5 left-1.5 w-[calc(50%-6px)] bg-primary/10 border border-primary/20 rounded-full shadow-sm transition-all duration-300 translate-x-0"
+          id="toggle-marker"
+        >
+        </div>
+        <button
+          class="relative z-10 px-8 py-2.5 text-sm font-bold text-foreground transition-colors duration-300"
+          id="btn-monthly">Monthly</button
+        >
+        <button
+          class="relative z-10 pl-8 pr-4 py-2.5 text-sm font-bold text-muted-foreground transition-colors duration-300 flex items-center gap-2"
+          id="btn-annual"
+        >
+          Annual
+          <span
+            class="text-[9px] font-black uppercase tracking-tight text-white bg-primary px-2 py-0.5 rounded-full border border-white/10 shadow-lg"
+            >-20%</span
+          >
+        </button>
+      </div>
+    </div>
+
+    <!-- Pricing Cards Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 lg:items-end">
+      {
+        plans.map((plan, index) => (
+          <div
+            class={`
+                flex flex-col bg-card rounded-3xl p-8 border hover:shadow-2xl transition-all duration-300 group w-full
+                ${plan.color === "neutral" ? "border-border" : ""}
+                ${plan.color === "primary" ? "border-primary ring-1 ring-primary/20 bg-primary/5" : ""}
+                ${plan.color === "secondary" ? "border-secondary ring-1 ring-secondary/20 bg-secondary/5" : ""}
+                ${index === 0 ? "lg:pt-12 lg:pb-8" : ""}
+                ${index === 1 ? "lg:pt-12 lg:pb-8" : ""}
+                ${index === 2 ? "lg:pt-12 lg:pb-8" : ""}
+            `}
+          >
+            <!-- Card Header (Layout Match) -->
+            <div class="flex items-start justify-between mb-8">
+              <!-- Icon + Name -->
+              <div class="flex flex-col gap-3">
+                {plan.color === "neutral" && (
+                  <svg
+                    class="w-8 h-8 text-foreground"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                  </svg>
+                )}
+                {plan.color === "primary" && (
+                  <svg
+                    class="w-8 h-8 text-primary"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                  </svg>
+                )}
+                {plan.color === "secondary" && (
+                  <svg
+                    class="w-8 h-8 text-secondary"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                  </svg>
+                )}
+                <h3 class="text-xl font-bold tracking-wide text-foreground">
+                  {plan.name}
+                </h3>
+              </div>
+
+              <!-- Price -->
+              <div class="text-right">
+                <div
+                  class={`text-4xl font-black tracking-tight flex items-baseline gap-1 ${
+                    plan.color === "primary"
+                      ? "text-primary"
+                      : plan.color === "secondary"
+                        ? "text-secondary"
+                        : "text-foreground"
+                  }`}
+                >
+                  {plan.monthlyPrice !== "0" && (
+                    <span class="text-2xl opacity-50 font-bold">$</span>
+                  )}
+                  <span
+                    class={
+                      plan.monthlyPrice === "0"
+                        ? "text-3xl"
+                        : "price-value tabular-nums"
+                    }
+                    data-monthly={plan.monthlyPrice}
+                    data-annual={plan.annualPrice}
+                  >
+                    {plan.monthlyPrice === "0" ? "Free" : plan.monthlyPrice}
+                  </span>
+                </div>
+                <div
+                  class="text-[10px] font-bold text-muted-foreground uppercase mt-1 price-period"
+                  data-monthly="Per Month"
+                  data-annual="Per Year"
+                >
+                  {plan.color === "neutral" ? "Free Forever" : "Per Month"}
+                </div>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="w-full h-px bg-border/50 mb-6" />
+
+            <!-- Description -->
+            <div class="mb-8 min-h-[60px]">
+              <p class="text-sm text-muted-foreground leading-relaxed font-medium">
+                {plan.desc}
+              </p>
+            </div>
+
+            <!-- Features List -->
+            <ul class="space-y-4 flex-1 mb-10">
+              {plan.features.map((feature) => (
+                <li class="flex items-center gap-4">
+                  <!-- Circle Check Icon -->
+                  <div
+                    class={`flex-shrink-0 w-5 h-5 rounded-full border flex items-center justify-center ${
+                      plan.color === "primary"
+                        ? "border-primary text-primary"
+                        : plan.color === "secondary"
+                          ? "border-secondary text-secondary"
+                          : "border-foreground text-foreground"
+                    }`}
+                  >
+                    <svg
+                      width="10"
+                      height="10"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="10 3 4.5 9 2 6.5" />
+                    </svg>
+                  </div>
+                  <span class="text-sm font-bold text-foreground">
+                    {feature.title}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <!-- Button -->
+            <button
+              data-plan-id={plan.id}
+              data-monthly-link={plan.links.monthly}
+              data-annual-link={plan.links.annual}
+              class={`
+                    pricing-btn w-full py-3.5 rounded-full font-bold text-sm text-center transition-all duration-300 flex items-center justify-center gap-2 relative
+                    ${plan.color === "neutral" ? "bg-foreground text-background hover:bg-foreground/90" : ""}
+                    ${plan.color === "primary" ? "bg-primary text-primary-foreground hover:bg-primary/90" : ""}
+                    ${plan.color === "secondary" ? "bg-secondary text-secondary-foreground hover:bg-secondary/90" : ""}
+                `}
+            >
+              <span class="btn-text">Get Started</span>
+              <svg
+                class="hidden animate-spin h-5 w-5 text-current btn-loader"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  class="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  stroke-width="4"
+                />
+                <path
+                  class="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                />
+              </svg>
+            </button>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  function initPricing() {
+    const monthlyBtn = document.getElementById("btn-monthly");
+    const annualBtn = document.getElementById("btn-annual");
+    const marker = document.getElementById("toggle-marker");
+    const priceValues = document.querySelectorAll(".price-value");
+    const pricePeriods = document.querySelectorAll(".price-period");
+    const pricingBtns = document.querySelectorAll(".pricing-btn");
+
+    let currentBilling: "monthly" | "annual" = "monthly";
+
+    const animateValue = (
+      el: HTMLElement,
+      start: number,
+      end: number,
+      duration: number,
+    ) => {
+      let startTimestamp: number | null = null;
+      const step = (timestamp: number) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        // Ease out function
+        const ease = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(ease * (end - start) + start);
+        el.textContent = current.toString();
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    };
+
+    const updatePrices = (type: "monthly" | "annual") => {
+      currentBilling = type;
+      priceValues.forEach((el, i) => {
+        const htmlEl = el as HTMLElement;
+        const targetPrice = parseInt(htmlEl.getAttribute(`data-${type}`) || "0");
+        const currentPrice = parseInt(htmlEl.textContent || "0");
+        const periodEl = pricePeriods[i];
+        const targetPeriod = periodEl?.getAttribute(`data-${type}`);
+
+        if (htmlEl.getAttribute(`data-monthly`) !== "0") {
+          // Count-up/down animation
+          animateValue(htmlEl, currentPrice, targetPrice, 500);
+
+          if (periodEl && targetPeriod) {
+            periodEl.classList.add("opacity-0", "scale-95");
+            setTimeout(() => {
+              periodEl.textContent = targetPeriod;
+              periodEl.classList.remove("opacity-0", "scale-95");
+            }, 250);
+          }
+        }
+      });
+    };
+
+    annualBtn?.addEventListener("click", () => {
+      marker?.classList.remove("translate-x-0");
+      marker?.classList.add("translate-x-full");
+      monthlyBtn?.classList.replace("text-foreground", "text-muted-foreground");
+      annualBtn?.classList.replace("text-muted-foreground", "text-foreground");
+      updatePrices("annual");
+    });
+
+    monthlyBtn?.addEventListener("click", () => {
+      marker?.classList.remove("translate-x-full");
+      marker?.classList.add("translate-x-0");
+      annualBtn?.classList.replace("text-foreground", "text-muted-foreground");
+      monthlyBtn?.classList.replace("text-muted-foreground", "text-foreground");
+      updatePrices("monthly");
+    });
+
+    // Handle Button Clicks
+    pricingBtns.forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const targetBtn = btn as HTMLButtonElement;
+        const planId = targetBtn.getAttribute("data-plan-id");
+        const monthlyLink = targetBtn.getAttribute("data-monthly-link");
+        const annualLink = targetBtn.getAttribute("data-annual-link");
+        const link = currentBilling === "monthly" ? monthlyLink : annualLink;
+
+        if (!link) return;
+
+        // Visual feedback
+        const btnText = targetBtn.querySelector(".btn-text");
+        const btnLoader = targetBtn.querySelector(".btn-loader");
+
+        if (btnText && btnLoader) {
+          btnText.textContent = "Redirecting...";
+          btnLoader.classList.remove("hidden");
+          targetBtn.classList.add("opacity-80", "pointer-events-none");
+        }
+
+        // Delay for simulation and feeling
+        await new Promise((resolve) => setTimeout(resolve, 800));
+
+        if (link.startsWith("#")) {
+          // Internal Link (Contact Section)
+          window.location.href = link;
+          
+          // Reset button after a short delay since it's internal
+          setTimeout(() => {
+            if (btnText && btnLoader) {
+              btnText.textContent = "Get Started";
+              btnLoader.classList.add("hidden");
+              targetBtn.classList.remove("opacity-80", "pointer-events-none");
+            }
+          }, 500);
+        } else {
+          // External Link (Stripe)
+          window.open(link, "_blank");
+
+          // Reset button state
+          setTimeout(() => {
+            if (btnText && btnLoader) {
+              btnText.textContent = "Get Started";
+              btnLoader.classList.add("hidden");
+              targetBtn.classList.remove("opacity-80", "pointer-events-none");
+            }
+          }, 1000);
+        }
+      });
+    });
+  }
+
+  initPricing();
+  document.addEventListener("astro:after-swap", initPricing);
+</script>
+
+<style>
+  .pricing-btn {
+    font-family: "Exo", sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+</style>
+

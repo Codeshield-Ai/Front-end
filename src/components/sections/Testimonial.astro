@@ -1,0 +1,340 @@
+---
+import Highlight from "../Highlight.astro";
+
+const testimonials = [
+  {
+    quote:
+      "ShieldNet uncovered critical vulnerabilities in our production systems before release, preventing costly security incidents and downtime.",
+    author: "David Callahan",
+    role: "Marketing Director, ABC Corp",
+    img: "/testimonials (6).png",
+    metric: "8X",
+    metricDesc: "Detection rate",
+  },
+  {
+    quote:
+      "Our DevOps team gained unmatched visibility into infrastructure risks across complex multi-cloud and hybrid environments.",
+    author: "Sarah Jenkins",
+    role: "Security Lead, Nexa",
+    img: "/testimonials (2).png",
+    metric: "95%",
+    metricDesc: "Less false alerts",
+  },
+  {
+    quote:
+      "ShieldNet continuously analyzes massive codebases, detecting hidden weaknesses traditional security scanners consistently failed to identify",
+    author: "James Wilson",
+    role: "Tech Lead, NexGen Labs",
+    img: "/testimonials (4).png",
+    metric: "12H",
+    metricDesc: "Weekly savings",
+  },
+  {
+    quote:
+      "Our compliance audits became significantly faster and more structured after implementing the platform enterprise-wide",
+    author: "Victoria Collins",
+    role: "DevOps Engineer",
+    img: "/testimonials.png",
+    metric: "100%",
+    metricDesc: "Platform uptime",
+  },
+  {
+    quote:
+      "ShieldNet reduced infrastructure misconfigurations and strengthened deployment confidence within our very first implementation cycle",
+    author: "Ryan Matthews",
+    role: "Founder, Streamline",
+    img: "/testimonials (5).png",
+    metric: "50+",
+    metricDesc: "AI Models",
+  },
+  {
+    quote:
+      "The depth and scale of analysis provided gives our engineering teams measurable, enterprise-grade security assurance.",
+    author: "Isabella Hayes",
+    role: "CISO, SkyNet",
+    img: "/testimonials (3).png",
+    metric: "24/7",
+    metricDesc: "Active Vigil",
+  },
+];
+---
+
+<section
+  id="testimonial"
+  class="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-[#0F0F11] relative overflow-hidden"
+>
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+      <!-- Left Column -->
+      <div class="lg:col-span-5 space-y-8 md:space-y-12">
+        <div class="space-y-6 text-left">
+          <span
+            class="text-primary font-bold text-sm tracking-widest uppercase block mb-1"
+          >
+            Success Stories
+          </span>
+
+          <h2
+            class="text-3xl md:text-5xl lg:text-5xl font-black text-white uppercase tracking-tight leading-[1.1]"
+          >
+            Results that <Highlight class="text-primary" type="box"
+              >speaks</Highlight
+            > volume <br class="hidden md:block" /> Read success stories
+          </h2>
+
+          <p class="text-muted-foreground text-sm leading-relaxed max-w-sm">
+            Discover how leading enterprises leverage our AI-driven security
+            modules to achieve unprecedented resilience.
+          </p>
+        </div>
+
+        <!-- Trust Row -->
+        <div
+          class="pt-8 flex flex-wrap items-center gap-6 border-t border-white/5"
+        >
+          <div class="flex -space-x-2">
+            {
+              [0, 1, 2].map((i) => (
+                <img
+                  src={testimonials[i].img}
+                  class="w-10 h-10 rounded-full border-2 border-[#0F0F11] object-cover"
+                  alt="User"
+                />
+              ))
+            }
+            <div
+              class="w-10 h-10 rounded-full border-2 border-[#0F0F11] bg-primary flex items-center justify-center text-white font-black text-[10px]"
+            >
+              +50
+            </div>
+          </div>
+          <div>
+            <div class="flex gap-0.5">
+              {
+                [1, 2, 3, 4, 5].map(() => (
+                  <svg
+                    class="w-3.5 h-3.5 text-primary fill-current"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))
+              }
+            </div>
+            <p
+              class="text-[10px] text-muted-foreground font-black uppercase tracking-widest mt-1"
+            >
+              1.5K+ Trusted reviews
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="lg:col-span-7 w-full">
+        <div class="relative">
+          <div
+            class="bg-[#161618] border border-white/5 rounded-[2rem] sm:rounded-[2.5rem] p-5 sm:p-8 md:p-12 min-h-[420px] lg:min-h-[450px] relative overflow-hidden flex flex-col justify-between"
+          >
+            <!-- Quote Icon Background -->
+            <div
+              class="absolute -top-2 -right-2 sm:-top-4 sm:right-8 text-primary/5 pointer-events-none select-none"
+            >
+              <svg
+                width="120"
+                height="100"
+                class="sm:w-[220px] sm:h-[180px]"
+                viewBox="0 0 44 32"
+                fill="currentColor"
+                ><path
+                  d="M12.44 32C5.572 32 0 26.428 0 19.56C0 14.7 2.768 1.48 3.552 0h11.232c-.784 1.48-2.52 14.128-2.52 18.04h7.056v13.96H12.44zM36.176 32c-6.868 0-12.44-5.572-12.44-12.44C23.736 14.7 26.504 1.48 27.288 0h11.232c-.784 1.48-2.52 14.128-2.52 18.04h7.056v13.96H36.176z"
+                ></path></svg
+              >
+            </div>
+
+            <div
+              id="testimonial-slider-container"
+              class="relative z-10 flex-1 flex flex-col justify-between"
+            >
+              {
+                testimonials.map((t, i) => (
+                  <div
+                    class={`testimonial-slide transition-all duration-700 absolute inset-0 flex flex-col justify-between ${i === 0 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12 pointer-events-none"}`}
+                    data-index={i}
+                  >
+                    <div class="space-y-1">
+                      <div class="text-6xl sm:text-8xl font-light text-white tracking-tighter leading-none">
+                        {t.metric}
+                      </div>
+                      <p class="text-[8px] text-primary font-bold uppercase tracking-[0.3em]">
+                        {t.metricDesc}
+                      </p>
+                    </div>
+
+                    <div class="flex-grow flex items-center py-4 sm:py-0">
+                      <p class="text-xl sm:text-2xl md:text-2xl font-normal text-white/90 leading-relaxed tracking-tight border-l-2 border-primary/20 pl-4 sm:pl-8">
+                        {t.quote}
+                      </p>
+                    </div>
+
+                    <div class="flex items-center gap-4 sm:gap-5 pt-5 sm:pt-8 border-t border-white/5">
+                      <div class="relative w-10 h-10 sm:w-16 sm:h-16 rounded-lg sm:rounded-xl overflow-hidden border border-white/10 shrink-0">
+                        <img
+                          src={t.img}
+                          class="w-full h-full object-cover"
+                          alt={t.author}
+                        />
+                      </div>
+                      <div>
+                        <h4 class="text-white font-black tracking-tight text-xs sm:text-base uppercase leading-none mb-1 sm:mb-2">
+                          {t.author}
+                        </h4>
+                        <p class="text-[9px] sm:text-[10px] text-muted-foreground font-bold uppercase tracking-widest">
+                          {t.role}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+
+            <!-- Custom Controls -->
+            <div
+              class="absolute bottom-4 right-4 sm:bottom-10 sm:right-10 flex gap-2 sm:gap-4 items-center z-20"
+            >
+              <button
+                id="prev-btn-test"
+                class="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-primary text-black flex items-center justify-center hover:bg-primary/80 transition-all active:scale-95 group/btn cursor-pointer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  class="sm:w-[20px] sm:h-[20px]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="group-hover/btn:-translate-x-0.5 transition-transform"
+                  ><path d="m15 18-6-6 6-6"></path></svg
+                >
+              </button>
+              <button
+                id="next-btn-test"
+                class="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-primary text-black flex items-center justify-center hover:bg-primary/80 transition-all active:scale-95 group/btn cursor-pointer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  class="sm:w-[20px] sm:h-[20px]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="group-hover/btn:translate-x-0.5 transition-transform"
+                  ><path d="m9 18 6-6-6-6"></path></svg
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  let slideInterval: any;
+
+  function initSlider() {
+    // Clear any existing intervals to prevent multiple sliders running
+    if (slideInterval) clearInterval(slideInterval);
+
+    const container = document.getElementById("testimonial-slider-container");
+    if (!container) return;
+
+    const slides = container.querySelectorAll(".testimonial-slide");
+    const prevBtn = document.getElementById("prev-btn-test");
+    const nextBtn = document.getElementById("next-btn-test");
+    let currentIndex = 0;
+
+    if (!slides.length) return;
+
+    const showSlide = (index: number) => {
+      slides.forEach((slide, i) => {
+        const htmlSlide = slide as HTMLElement;
+        if (i === index) {
+          htmlSlide.classList.remove(
+            "opacity-0",
+            "translate-x-12",
+            "-translate-x-12",
+            "pointer-events-none",
+          );
+          htmlSlide.classList.add("opacity-100", "translate-x-0");
+        } else {
+          htmlSlide.classList.add("opacity-0", "pointer-events-none");
+          htmlSlide.classList.remove("opacity-100", "translate-x-0");
+          htmlSlide.classList.add(
+            i < index ? "-translate-x-12" : "translate-x-12",
+          );
+        }
+      });
+      currentIndex = index;
+    };
+
+    const nextSlideFunc = () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    };
+
+    const prevSlideFunc = () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      showSlide(currentIndex);
+    };
+
+    const resetInterval = () => {
+      clearInterval(slideInterval);
+      slideInterval = setInterval(nextSlideFunc, 6000);
+    };
+
+    nextBtn?.addEventListener("click", (e) => {
+      e.preventDefault();
+      nextSlideFunc();
+      resetInterval();
+    });
+
+    prevBtn?.addEventListener("click", (e) => {
+      e.preventDefault();
+      prevSlideFunc();
+      resetInterval();
+    });
+
+    slideInterval = setInterval(nextSlideFunc, 6000);
+  }
+
+  // Initial call
+  initSlider();
+
+  // Re-initialize on view transitions
+  document.addEventListener("astro:page-load", initSlider);
+  document.addEventListener("astro:after-swap", initSlider);
+</script>
+
+<style>
+  @media (max-width: 640px) {
+    #testimonial-slider {
+      min-height: 420px;
+    }
+  }
+  @media (min-width: 1024px) {
+    #testimonial-slider {
+      min-height: 420px;
+    }
+  }
+</style>

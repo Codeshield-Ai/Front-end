@@ -1,0 +1,56 @@
+---
+interface Props {
+    text1?: string;
+    text2?: string;
+    className?: string;
+}
+
+const {
+    text1 = "SECURE YOUR CODE • AI PROTECTION • ZERO TRUST • SCALABLE •",
+    text2 = "TRUSTED BY ENTERPRISES • 24/7 VIGIL • COMPLIANCE READY •",
+    className = "",
+} = Astro.props;
+---
+
+<div class={`relative py-8 md:py-12 overflow-hidden bg-[#0F0F11] ${className}`}>
+    <!-- Perspective Wrapper -->
+    <div
+        class="relative z-10 space-y-[-1.5rem] md:space-y-[-2rem] transform-gpu"
+    >
+        <!-- Primary Band (Purple) -->
+        <div
+            class="flex -rotate-[2deg] scale-105 bg-primary py-2 md:py-3 overflow-hidden whitespace-nowrap shadow-[0_10px_30px_rgba(0,0,0,0.3)] transform-gpu will-change-transform"
+        >
+            <div
+                class="animate-marquee flex gap-8 md:gap-16 text-black font-black uppercase tracking-tighter text-3xl md:text-5xl lg:text-6xl italic pr-8 md:pr-16 transform-gpu"
+            >
+                <span>{text1}</span>
+                <span>{text1}</span>
+                <span>{text1}</span>
+                <span>{text1}</span>
+            </div>
+        </div>
+
+        <!-- Secondary Band (White) -->
+        <div
+            class="flex rotate-[2deg] scale-105 bg-white py-2 md:py-3 overflow-hidden whitespace-nowrap shadow-[0_10px_30px_rgba(0,0,0,0.5)] relative z-20 transform-gpu will-change-transform"
+        >
+            <div
+                class="animate-marquee-reverse flex gap-8 md:gap-16 text-black font-black uppercase tracking-tighter text-3xl md:text-5xl lg:text-6xl italic pr-8 md:pr-16 transform-gpu"
+            >
+                <span>{text2}</span>
+                <span>{text2}</span>
+                <span>{text2}</span>
+                <span>{text2}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Ensure the marquee container has enough width for seamless loop */
+    .animate-marquee,
+    .animate-marquee-reverse {
+        width: fit-content;
+    }
+</style>

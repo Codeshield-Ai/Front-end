@@ -1,0 +1,120 @@
+---
+
+---
+
+<div
+    id="cookie-banner"
+    class="fixed bottom-6 left-6 z-[9999] max-w-[340px] w-[calc(100%-3rem)] bg-[#0F0F11]/95 backdrop-blur-xl border border-white/10 rounded-2xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform translate-y-10 opacity-0 pointer-events-none transition-all duration-700 ease-out flex flex-col gap-4 invisible"
+>
+    <div class="flex items-start gap-3">
+        <div
+            class="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#7E67F1"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"
+                ></path>
+                <path d="M8.5 8.5v.01"></path>
+                <path d="M16 15.5v.01"></path>
+                <path d="M12 12v.01"></path>
+                <path d="M11 17v.01"></path>
+                <path d="M7 14v.01"></path>
+            </svg>
+        </div>
+        <div class="space-y-1">
+            <h4 class="text-sm font-black text-white uppercase tracking-wider">
+                Cookie Intelligence
+            </h4>
+            <p class="text-[12px] text-muted-foreground leading-relaxed">
+                We use cookies to encrypt your experience and optimize our
+                security protocols. Read our <a
+                    href="/privacy"
+                    class="text-primary hover:underline">Privacy Policy</a
+                >.
+            </p>
+        </div>
+    </div>
+
+    <div class="flex items-center gap-3">
+        <button
+            id="accept-cookies"
+            class="flex-1 bg-primary hover:bg-primary/90 text-white text-[10px] font-black uppercase tracking-widest py-3 rounded-xl transition-all active:scale-95"
+        >
+            Authorize
+        </button>
+        <button
+            id="deny-cookies"
+            class="flex-1 bg-white/5 hover:bg-white/10 text-white/60 hover:text-white text-[10px] font-black uppercase tracking-widest py-3 rounded-xl border border-white/5 transition-all active:scale-95"
+        >
+            Decline
+        </button>
+    </div>
+</div>
+
+<script>
+    function initCookieBanner() {
+        const banner = document.getElementById("cookie-banner");
+        const acceptBtn = document.getElementById("accept-cookies");
+        const denyBtn = document.getElementById("deny-cookies");
+
+        if (!banner || !acceptBtn || !denyBtn) return;
+
+        // Check if user has already made a choice
+        const cookieChoice = localStorage.getItem("cookie-consent");
+
+        if (!cookieChoice) {
+            // Show with animation
+            setTimeout(() => {
+                banner.classList.remove(
+                    "invisible",
+                    "translate-y-10",
+                    "opacity-0",
+                    "pointer-events-none",
+                );
+                banner.classList.add("translate-y-0", "opacity-100");
+            }, 1500);
+        }
+
+        const hideBanner = () => {
+            banner.classList.remove("translate-y-0", "opacity-100");
+            banner.classList.add(
+                "translate-y-10",
+                "opacity-0",
+                "pointer-events-none",
+            );
+            setTimeout(() => {
+                banner.classList.add("invisible");
+            }, 700);
+        };
+
+        acceptBtn.addEventListener("click", () => {
+            localStorage.setItem("cookie-consent", "accepted");
+            hideBanner();
+        });
+
+        denyBtn.addEventListener("click", () => {
+            localStorage.setItem("cookie-consent", "denied");
+            hideBanner();
+        });
+    }
+
+    // Run on first load
+    initCookieBanner();
+    // Run on view transitions
+    document.addEventListener("astro:after-swap", initCookieBanner);
+</script>
+
+<style>
+    #cookie-banner {
+        font-family: "Exo", sans-serif;
+    }
+</style>

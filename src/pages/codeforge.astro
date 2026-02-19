@@ -1,0 +1,974 @@
+---
+import "@/styles/starwind.css";
+import DockNavbar from "@/components/DockNavbar.astro";
+import Footer from "@/components/sections/Footer.astro";
+import Highlight from "@/components/Highlight.astro";
+import Marquee from "@/components/sections/Marquee.astro";
+import CookieBanner from "@/components/CookieBanner.astro";
+---
+
+<html lang="en" class="dark">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="CodeForge - Advanced AI-Powered DevSecOps Platform powered by NVIDIA's latest AI SDKs" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<title>CodeForge | AI-Powered DevSecOps Platform</title>
+		<link rel="canonical" href="https://codeshieldai.com/codeforge" />
+		<!--Start of Tawk.to Script-->
+		<script type="text/javascript">
+			var Tawk_API = Tawk_API || {},
+				Tawk_LoadStart = new Date();
+			(function () {
+				var s1 = document.createElement("script"),
+					s0 = document.getElementsByTagName("script")[0];
+				s1.async = true;
+				s1.src =
+					"https://embed.tawk.to/6992b7b573d8cb1c357e2899/1jhihr869";
+				s1.charset = "UTF-8";
+				s1.setAttribute("crossorigin", "*");
+				s0.parentNode.insertBefore(s1, s0);
+			})();
+		</script>
+		<!--End of Tawk.to Script-->
+	</head>
+	<body
+		class="bg-background min-h-screen flex flex-col font-['Exo',sans-serif] selection:bg-secondary selection:text-foreground transition-colors duration-500 overflow-x-hidden"
+	>
+		<DockNavbar />
+
+		<!-- HERO SECTION -->
+		<section
+			class="relative min-h-[100dvh] flex items-center justify-center overflow-hidden pt-20 pb-10"
+		>
+			<!-- Background & Main Visual -->
+			<div class="absolute inset-0 z-0">
+				<!-- Dark Gradient Background -->
+				<div class="absolute inset-0 bg-background"></div>
+
+				<!-- Cinematic Overlays -->
+				<div
+					class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background/80"
+				></div>
+				<div
+					class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40"
+				></div>
+
+				<!-- Tech Grid Background -->
+				<div
+					class="absolute inset-0 opacity-[0.03]"
+					style="background-image: radial-gradient(circle, #7E67F1 1px, transparent 1px); background-size: 50px 50px;"
+				></div>
+			</div>
+
+			<!-- Main Content -->
+			<div
+				class="relative z-10 w-full max-w-[1400px] px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 h-full items-center"
+			>
+				<div
+					class="lg:col-span-6 flex flex-col justify-center gap-8 lg:gap-16 pt-10 lg:pt-0"
+				>
+					<div>
+						<h1
+							class="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-medium tracking-tighter text-foreground leading-[0.95]"
+						>
+							CodeForge: <br /> Enterprise <Highlight
+								class="text-primary font-bold"
+								type="box">AI Security</Highlight
+							>
+						</h1>
+
+						<div
+							class="mt-6 flex items-center gap-3 text-muted-foreground"
+						>
+							<div class="flex gap-0.5 text-primary">
+								{[...Array(5)].map(() => (
+									<svg
+										fill="currentColor"
+										viewBox="0 0 24 24"
+										class="w-4 h-4"
+									>
+										<path
+											d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+										></path>
+									</svg>
+								))}
+							</div>
+							<span class="font-semibold">Enterprise Security</span>
+						</div>
+					</div>
+
+					<p
+						class="text-muted-foreground text-base md:text-xl leading-relaxed max-w-xl"
+					>
+						Advanced DevSecOps platform powered by NVIDIA's
+						latest AI SDKs. Real-time threat detection,
+						vulnerability analysis, and autonomous infrastructure
+						hardening.
+					</p>
+
+					<!-- CTA Buttons -->
+					<div class="flex flex-col sm:flex-row gap-4 pt-8">
+						<a
+							href="#capabilities"
+							class="inline-flex items-center justify-center px-8 py-4 rounded-full font-black text-sm transition-all duration-300 bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-wider hover:shadow-lg hover:-translate-y-1 active:translate-y-0"
+						>
+							Explore Features
+						</a>
+						<a
+							href="/#contact"
+							class="inline-flex items-center justify-center px-8 py-4 rounded-full font-black text-sm transition-all duration-300 border-2 border-primary text-primary hover:bg-primary/10 uppercase tracking-wider hover:shadow-lg hover:-translate-y-1 active:translate-y-0"
+						>
+							Get Started
+						</a>
+					</div>
+				</div>
+
+				<!-- Right side visual -->
+				<div
+					class="lg:col-span-6 hidden lg:flex items-center justify-center relative"
+				>
+					<div
+						class="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl blur-3xl"
+					></div>
+					<div
+						class="relative w-full max-w-md h-[400px] bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl border border-primary/20 backdrop-blur-xl flex items-center justify-center"
+					>
+						<div class="text-center space-y-4 px-8">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="80"
+								height="80"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="1"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								class="mx-auto text-primary opacity-60"
+								><path
+									d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5-9h10M12 7v10"
+								></path>
+							</svg>
+							<h3 class="text-xl font-bold text-foreground">
+								AI-Driven Security
+							</h3>
+							<p class="text-sm text-muted-foreground">
+								Powered by NVIDIA Morpheus, RAPIDS, and NeMo
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- MARQUEE DIVIDER 1 -->
+		<Marquee
+			text1="NVIDIA MORPHEUS • REAL-TIME MONITORING • VULNERABILITY ANALYSIS •"
+			text2="NVIDIA RAPIDS • NVIDIA NEMO • AUTONOMOUS DEFENSE • AI ORCHESTRATION •"
+		/>
+
+		<!-- CAPABILITIES SECTION -->
+		<section
+			id="capabilities"
+			class="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-background relative overflow-hidden"
+		>
+			<div class="max-w-7xl mx-auto relative z-10">
+				<!-- Heading -->
+				<div
+					class="text-center mb-16 md:mb-24 space-y-4 flex flex-col items-center"
+				>
+					<span
+						class="text-primary font-bold text-sm tracking-widest uppercase mb-2 md:mb-2 block text-center"
+						>Core Capabilities</span
+					>
+					<h2
+						class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black text-foreground tracking-tight leading-[1.1] max-w-4xl mx-auto"
+					>
+						Four Pillars of <Highlight
+							class="text-primary"
+							type="box">Enterprise Security</Highlight
+						>
+					</h2>
+					<p
+						class="text-muted-foreground text-sm md:text-base leading-relaxed font-medium max-w-2xl mx-auto"
+					>
+						CodeForge integrates NVIDIA's most advanced AI SDKs to
+						deliver comprehensive DevSecOps capabilities at enterprise
+						scale.
+					</p>
+				</div>
+
+				<!-- Capabilities Grid -->
+				<div
+					class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+				>
+					<!-- Capability 1: Real-Time Monitoring -->
+					<div
+						class="group relative bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition-all duration-500 overflow-hidden"
+					>
+						<div
+							class="absolute -top-12 -right-12 w-24 h-24 bg-primary/10 blur-3xl rounded-full group-hover:bg-primary/20 transition-all"
+						></div>
+						<div
+							class="relative z-10 mb-6 w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								><path
+									d="M12 2v20M2 12h20M5.64 5.64l14.07 14.07M5.64 18.36L19.71 4.29"
+								></path></svg
+							>
+						</div>
+						<h3
+							class="text-lg font-bold text-foreground mb-3 relative z-10"
+						>
+							Real-Time Monitoring
+						</h3>
+						<p
+							class="text-sm text-muted-foreground relative z-10 leading-relaxed"
+						>
+							NVIDIA Morpheus powers 24/7 security vigilance,
+							processing high-volume data streams for instant threat
+							detection across your infrastructure.
+						</p>
+					</div>
+
+					<!-- Capability 2: Intelligence Engine -->
+					<div
+						class="group relative bg-card border border-border rounded-2xl p-8 hover:border-secondary/50 transition-all duration-500 overflow-hidden"
+					>
+						<div
+							class="absolute -top-12 -right-12 w-24 h-24 bg-secondary/10 blur-3xl rounded-full group-hover:bg-secondary/20 transition-all"
+						></div>
+						<div
+							class="relative z-10 mb-6 w-12 h-12 rounded-xl bg-secondary/10 border border-secondary/20 flex items-center justify-center text-secondary"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								><path
+									d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm-2 6l3 4-3 4m6 0l-3-4 3-4"
+								></path></svg
+							>
+						</div>
+						<h3
+							class="text-lg font-bold text-foreground mb-3 relative z-10"
+						>
+							Intelligence Engine
+						</h3>
+						<p
+							class="text-sm text-muted-foreground relative z-10 leading-relaxed"
+						>
+							NVIDIA RAPIDS accelerates data analysis and ML model
+							training, building the "brain" that detects
+							infrastructure threats and patterns.
+						</p>
+					</div>
+
+					<!-- Capability 3: Code Analysis -->
+					<div
+						class="group relative bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition-all duration-500 overflow-hidden"
+					>
+						<div
+							class="absolute -top-12 -right-12 w-24 h-24 bg-primary/10 blur-3xl rounded-full group-hover:bg-primary/20 transition-all"
+						></div>
+						<div
+							class="relative z-10 mb-6 w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								><path
+									d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"
+								></path></svg
+							>
+						</div>
+						<h3
+							class="text-lg font-bold text-foreground mb-3 relative z-10"
+						>
+							Code Vulnerability Analysis
+						</h3>
+						<p
+							class="text-sm text-muted-foreground relative z-10 leading-relaxed"
+						>
+							NVIDIA NeMo's specialized "Code LLM" understands
+							code-level vulnerabilities, CVEs, and security
+							patterns to expose hidden risks.
+						</p>
+					</div>
+
+					<!-- Capability 4: Production Deployment -->
+					<div
+						class="group relative bg-card border border-border rounded-2xl p-8 hover:border-secondary/50 transition-all duration-500 overflow-hidden"
+					>
+						<div
+							class="absolute -top-12 -right-12 w-24 h-24 bg-secondary/10 blur-3xl rounded-full group-hover:bg-secondary/20 transition-all"
+						></div>
+						<div
+							class="relative z-10 mb-6 w-12 h-12 rounded-xl bg-secondary/10 border border-secondary/20 flex items-center justify-center text-secondary"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								><path
+									d="M9 11l3 3L20 4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"
+								></path></svg
+							>
+						</div>
+						<h3
+							class="text-lg font-bold text-foreground mb-3 relative z-10"
+						>
+							Enterprise Deployment
+						</h3>
+						<p
+							class="text-sm text-muted-foreground relative z-10 leading-relaxed"
+						>
+							NVIDIA Triton Inference Server and TensorRT ensure
+							optimal performance and latency across all AI
+							components.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- MARQUEE DIVIDER 2 -->
+		<Marquee
+			text1="DEEP-PROBE ANALYSIS • INFRASTRUCTURE HARDENING • ZERO-TRUST • "
+			text2="GPU-ACCELERATED • THREAT INTELLIGENCE • COMPLIANCE AUTOMATION •"
+		/>
+
+		<!-- NVIDIA TECH STACK SECTION -->
+		<section
+			class="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-background relative overflow-hidden"
+		>
+			<div class="max-w-7xl mx-auto">
+				<div
+					class="text-center mb-16 md:mb-24 space-y-4 flex flex-col items-center"
+				>
+					<span
+						class="text-primary font-bold text-sm tracking-widest uppercase mb-2 md:mb-2 block text-center"
+						>Technology Stack</span
+					>
+					<h2
+						class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black text-foreground tracking-tight leading-[1.1] max-w-4xl mx-auto"
+					>
+						Powered by <Highlight class="text-primary" type="box"
+							>NVIDIA's</Highlight
+						> Latest AI SDKs
+					</h2>
+				</div>
+
+				<!-- Tech Components Grid -->
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+					<!-- Morpheus Card -->
+					<div
+						class="bg-card border border-border rounded-2xl p-8 md:p-10 hover:border-primary/50 transition-all duration-500 group"
+					>
+						<div
+							class="flex items-start justify-between mb-6"
+						>
+							<div>
+								<h3
+									class="text-2xl font-black text-foreground mb-2"
+								>
+									NVIDIA Morpheus
+								</h3>
+								<p
+									class="text-sm text-muted-foreground font-semibold"
+								>
+									Real-Time Security Pipeline
+								</p>
+							</div>
+							<div
+								class="text-primary text-4xl font-black opacity-20"
+							>
+								⚡
+							</div>
+						</div>
+						<p
+							class="text-muted-foreground text-sm leading-relaxed mb-6"
+						>
+							An open-source AI application framework for
+							building high-performance, real-time pipelines for
+							cybersecurity, anomaly detection, and compliance
+							monitoring.
+						</p>
+						<ul
+							class="space-y-3"
+						>
+							<li
+								class="flex items-start gap-3 text-sm text-foreground"
+							>
+								<span class="text-primary font-bold mt-0.5"
+									>✓</span
+								>
+								24/7 Threat Detection
+							</li>
+							<li
+								class="flex items-start gap-3 text-sm text-foreground"
+							>
+								<span class="text-primary font-bold mt-0.5"
+									>✓</span
+								>
+								Anomalous Behavior Detection
+							</li>
+							<li
+								class="flex items-start gap-3 text-sm text-foreground"
+							>
+								<span class="text-primary font-bold mt-0.5"
+									>✓</span
+								>
+								Compliance Drift Monitoring
+							</li>
+						</ul>
+					</div>
+
+					<!-- RAPIDS Card -->
+					<div
+						class="bg-card border border-border rounded-2xl p-8 md:p-10 hover:border-secondary/50 transition-all duration-500 group"
+					>
+						<div
+							class="flex items-start justify-between mb-6"
+						>
+							<div>
+								<h3
+									class="text-2xl font-black text-foreground mb-2"
+								>
+									NVIDIA RAPIDS
+								</h3>
+								<p
+									class="text-sm text-muted-foreground font-semibold"
+								>
+									GPU-Accelerated Data Science
+								</p>
+							</div>
+							<div
+								class="text-secondary text-4xl font-black opacity-20"
+							>
+								🧠
+							</div>
+						</div>
+						<p
+							class="text-muted-foreground text-sm leading-relaxed mb-6"
+						>
+							A suite of GPU-accelerated libraries for
+							end-to-end data science. Analyzes terabytes of
+							historical logs and trains predictive ML models.
+						</p>
+						<ul
+							class="space-y-3"
+						>
+							<li
+								class="flex items-start gap-3 text-sm text-foreground"
+							>
+								<span class="text-secondary font-bold mt-0.5"
+									>✓</span
+								>
+								cuDF (GPU-accelerated Pandas)
+							</li>
+							<li
+								class="flex items-start gap-3 text-sm text-foreground"
+							>
+								<span class="text-secondary font-bold mt-0.5"
+									>✓</span
+								>
+								cuML (ML Model Training)
+							</li>
+							<li
+								class="flex items-start gap-3 text-sm text-foreground"
+							>
+								<span class="text-secondary font-bold mt-0.5"
+									>✓</span
+								>
+								Pattern Recognition
+							</li>
+						</ul>
+					</div>
+
+					<!-- NeMo Card -->
+					<div
+						class="bg-card border border-border rounded-2xl p-8 md:p-10 hover:border-primary/50 transition-all duration-500 group"
+					>
+						<div
+							class="flex items-start justify-between mb-6"
+						>
+							<div>
+								<h3
+									class="text-2xl font-black text-foreground mb-2"
+								>
+									NVIDIA NeMo Framework
+								</h3>
+								<p
+									class="text-sm text-muted-foreground font-semibold"
+								>
+									Specialized LLM for Security
+								</p>
+							</div>
+							<div
+								class="text-primary text-4xl font-black opacity-20"
+							>
+								🔐
+							</div>
+						</div>
+						<p
+							class="text-muted-foreground text-sm leading-relaxed mb-6"
+						>
+							An end-to-end framework for building and deploying
+							custom LLMs. Fine-tuned on code, CVEs, and secure
+							coding patterns.
+						</p>
+						<ul
+							class="space-y-3"
+						>
+							<li
+								class="flex items-start gap-3 text-sm text-foreground"
+							>
+								<span class="text-primary font-bold mt-0.5"
+									>✓</span
+								>
+								Code-Level Vulnerability Detection
+							</li>
+							<li
+								class="flex items-start gap-3 text-sm text-foreground"
+							>
+								<span class="text-primary font-bold mt-0.5"
+									>✓</span
+								>
+								CVE Understanding
+							</li>
+							<li
+								class="flex items-start gap-3 text-sm text-foreground"
+							>
+								<span class="text-primary font-bold mt-0.5"
+									>✓</span
+								>
+								Intelligent Remediation
+							</li>
+						</ul>
+					</div>
+
+					<!-- Deployment Stack Card -->
+					<div
+						class="bg-card border border-border rounded-2xl p-8 md:p-10 hover:border-secondary/50 transition-all duration-500 group"
+					>
+						<div
+							class="flex items-start justify-between mb-6"
+						>
+							<div>
+								<h3
+									class="text-2xl font-black text-foreground mb-2"
+								>
+									Triton & TensorRT
+								</h3>
+								<p
+									class="text-sm text-muted-foreground font-semibold"
+								>
+									Production Inference Engine
+								</p>
+							</div>
+							<div
+								class="text-secondary text-4xl font-black opacity-20"
+							>
+								🚀
+							</div>
+						</div>
+						<p
+							class="text-muted-foreground text-sm leading-relaxed mb-6"
+						>
+							Unified inference server and optimization engine.
+							Hosts Morpheus, RAPIDS models, and NeMo LLM
+							side-by-side for maximum efficiency.
+						</p>
+						<ul
+							class="space-y-3"
+						>
+							<li
+								class="flex items-start gap-3 text-sm text-foreground"
+							>
+								<span class="text-secondary font-bold mt-0.5"
+									>✓</span
+								>
+								Triton Inference Server
+							</li>
+							<li
+								class="flex items-start gap-3 text-sm text-foreground"
+							>
+								<span class="text-secondary font-bold mt-0.5"
+									>✓</span
+								>
+								TensorRT Optimization
+							</li>
+							<li
+								class="flex items-start gap-3 text-sm text-foreground"
+							>
+								<span class="text-secondary font-bold mt-0.5"
+									>✓</span
+								>
+								Low-Latency Processing
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- INTEGRATION FLOW SECTION -->
+		<section
+			class="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-background relative overflow-hidden"
+		>
+			<div class="max-w-7xl mx-auto">
+				<div
+					class="text-center mb-16 md:mb-24 space-y-4 flex flex-col items-center"
+				>
+					<span
+						class="text-primary font-bold text-sm tracking-widest uppercase mb-2 md:mb-2 block text-center"
+						>Architecture</span
+					>
+					<h2
+						class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black text-foreground tracking-tight leading-[1.1] max-w-4xl mx-auto"
+					>
+						The Unified DevSecOps <Highlight
+							class="text-primary"
+							type="box">Pipeline</Highlight
+						>
+					</h2>
+				</div>
+
+				<!-- Pipeline Flow - Desktop -->
+				<div
+					class="hidden lg:grid grid-cols-4 gap-6 items-center mb-12"
+				>
+					<!-- Component 1 -->
+					<div class="text-center space-y-4">
+						<div
+							class="bg-card border border-border rounded-2xl p-8 flex flex-col items-center justify-center min-h-[180px] group hover:border-primary/50 transition-all"
+						>
+							<div
+								class="text-5xl mb-3"
+							>🗂️</div>
+							<h3
+								class="font-bold text-foreground text-sm"
+							>
+								Historical Data
+							</h3>
+							<p
+								class="text-xs text-muted-foreground mt-2"
+							>
+								Logs, Events, Code
+							</p>
+						</div>
+					</div>
+
+					<!-- Arrow 1 -->
+					<div class="flex justify-center">
+						<div
+							class="text-primary text-3xl font-black"
+						>→</div>
+					</div>
+
+					<!-- Component 2 -->
+					<div class="text-center space-y-4">
+						<div
+							class="bg-card border border-border rounded-2xl p-8 flex flex-col items-center justify-center min-h-[180px] group hover:border-secondary/50 transition-all"
+						>
+							<div
+								class="text-5xl mb-3"
+							>🧠</div>
+							<h3
+								class="font-bold text-foreground text-sm"
+							>
+								RAPIDS Training
+							</h3>
+							<p
+								class="text-xs text-muted-foreground mt-2"
+							>
+								Build AI Models
+							</p>
+						</div>
+					</div>
+
+					<!-- Arrow 2 -->
+					<div class="flex justify-center">
+						<div
+							class="text-primary text-3xl font-black"
+						>→</div>
+					</div>
+
+					<!-- Component 3 -->
+					<div class="text-center space-y-4">
+						<div
+							class="bg-card border border-border rounded-2xl p-8 flex flex-col items-center justify-center min-h-[180px] group hover:border-primary/50 transition-all"
+						>
+							<div
+								class="text-5xl mb-3"
+							>⚡</div>
+							<h3
+								class="font-bold text-foreground text-sm"
+							>
+								Morpheus Pipeline
+							</h3>
+							<p
+								class="text-xs text-muted-foreground mt-2"
+							>
+								Real-time Detection
+							</p>
+						</div>
+					</div>
+
+					<!-- Arrow 3 -->
+					<div class="flex justify-center">
+						<div
+							class="text-primary text-3xl font-black"
+						>→</div>
+					</div>
+
+					<!-- Component 4 -->
+					<div class="text-center space-y-4">
+						<div
+							class="bg-card border border-border rounded-2xl p-8 flex flex-col items-center justify-center min-h-[180px] group hover:border-secondary/50 transition-all"
+						>
+							<div
+								class="text-5xl mb-3"
+							>🚀</div>
+							<h3
+								class="font-bold text-foreground text-sm"
+							>
+								Triton Deploy
+							</h3>
+							<p
+								class="text-xs text-muted-foreground mt-2"
+							>
+								Enterprise Ready
+							</p>
+						</div>
+					</div>
+
+					<!-- Arrow 4 -->
+					<div class="flex justify-center">
+						<div
+							class="text-primary text-3xl font-black"
+						>→</div>
+					</div>
+
+					<!-- Component 5 -->
+					<div class="text-center space-y-4">
+						<div
+							class="bg-card border border-border rounded-2xl p-8 flex flex-col items-center justify-center min-h-[180px] group hover:border-primary/50 transition-all"
+						>
+							<div
+								class="text-5xl mb-3"
+							>🎯</div>
+							<h3
+								class="font-bold text-foreground text-sm"
+							>
+								Autonomous Defense
+							</h3>
+							<p
+								class="text-xs text-muted-foreground mt-2"
+							>
+								24/7 Protection
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Pipeline Flow - Mobile -->
+				<div
+					class="lg:hidden space-y-4 mb-12"
+				>
+					{[
+						{ emoji: "🗂️", title: "Historical Data", desc: "Logs, Events, Code" },
+						{ emoji: "🧠", title: "RAPIDS Training", desc: "Build AI Models" },
+						{ emoji: "⚡", title: "Morpheus Pipeline", desc: "Real-time Detection" },
+						{ emoji: "🚀", title: "Triton Deploy", desc: "Enterprise Ready" },
+						{ emoji: "🎯", title: "Autonomous Defense", desc: "24/7 Protection" },
+					].map((item) => (
+						<div
+							class="bg-card border border-border rounded-2xl p-6 flex items-center gap-4 group hover:border-primary/50 transition-all"
+						>
+							<div
+								class="text-4xl flex-shrink-0"
+							>{item.emoji}</div>
+							<div>
+								<h3
+									class="font-bold text-foreground text-sm"
+								>
+									{item.title}
+								</h3>
+								<p
+									class="text-xs text-muted-foreground mt-1"
+								>
+									{item.desc}
+								</p>
+							</div>
+						</div>
+					))}
+				</div>
+
+				<!-- Feature Highlights -->
+				<div
+					class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12"
+				>
+					<div
+						class="bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 rounded-2xl p-8"
+					>
+						<h4
+							class="font-black text-foreground mb-2 text-lg"
+						>
+							GPU-Accelerated
+						</h4>
+						<p
+							class="text-sm text-muted-foreground"
+						>
+							Leverage NVIDIA GPUs for sub-millisecond latency and massive throughput.
+						</p>
+					</div>
+
+					<div
+						class="bg-gradient-to-br from-secondary/10 to-transparent border border-secondary/20 rounded-2xl p-8"
+					>
+						<h4
+							class="font-black text-foreground mb-2 text-lg"
+						>
+							AI-Native Security
+						</h4>
+						<p
+							class="text-sm text-muted-foreground"
+						>
+							Built on state-of-the-art deep learning and LLM technologies.
+						</p>
+					</div>
+
+					<div
+						class="bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 rounded-2xl p-8"
+					>
+						<h4
+							class="font-black text-foreground mb-2 text-lg"
+						>
+							Enterprise Scale
+						</h4>
+						<p
+							class="text-sm text-muted-foreground"
+						>
+							Handle millions of events per second across global infrastructure.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- MARQUEE DIVIDER 3 -->
+		<Marquee
+			text1="CODEFORGE • AUTONOMOUS AI SECURITY • ENTERPRISE DEVOPS •"
+			text2="NVIDIA-POWERED • ZERO HUMAN INTERVENTION • CONTINUOUS VIGILANCE •"
+		/>
+
+		<!-- CTA SECTION -->
+		<section
+			class="py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-background relative overflow-hidden"
+		>
+			<div class="max-w-4xl mx-auto text-center space-y-8">
+				<div class="space-y-4">
+					<h2
+						class="text-4xl sm:text-5xl md:text-6xl font-black text-foreground tracking-tight"
+					>
+						Ready to Transform Your <Highlight
+							class="text-primary"
+							type="box">Security?</Highlight
+						>
+					</h2>
+					<p
+						class="text-muted-foreground text-base md:text-lg leading-relaxed max-w-2xl mx-auto"
+					>
+						Experience the power of AI-driven security with CodeForge,
+						powered by NVIDIA's enterprise-grade AI SDKs.
+					</p>
+				</div>
+
+				<div class="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+					<a
+						href="/#contact"
+						class="inline-flex items-center justify-center px-10 py-4 rounded-full font-black text-sm transition-all duration-300 bg-primary text-primary-foreground hover:bg-primary/90 uppercase tracking-wider hover:shadow-lg hover:-translate-y-1 active:translate-y-0"
+					>
+						Get Started Today
+					</a>
+					<a
+						href="/"
+						class="inline-flex items-center justify-center px-10 py-4 rounded-full font-black text-sm transition-all duration-300 border-2 border-primary text-primary hover:bg-primary/10 uppercase tracking-wider hover:shadow-lg hover:-translate-y-1 active:translate-y-0"
+					>
+						Back to Home
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- FOOTER -->
+		<Footer />
+
+		<!-- COOKIE BANNER -->
+		<CookieBanner />
+
+		<style>
+			@keyframes fade-in-up {
+				from {
+					opacity: 0;
+					transform: translateY(20px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			@keyframes slide-in {
+				from {
+					opacity: 0;
+					transform: translateX(-20px);
+				}
+				to {
+					opacity: 1;
+					transform: translateX(0);
+				}
+			}
+		</style>
+	</body>
+</html>
